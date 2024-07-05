@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::redirect('/', '/login');
+
+Route::get('/login', [UserController::class, 'create']);
+Route::post('/login', [UserController::class, 'store']);
