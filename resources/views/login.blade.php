@@ -1,8 +1,7 @@
 {{ $msg }}
 <br><br>
 <!-- registreer -->
-{{-- action="{{ route('new_account') }}" --}}
-<form method="post" >
+<form method="post" action="{{ route('create_account') }}">
     @csrf
     Gebruikersnaam: <div>
         <input type="text" name="name"><br>
