@@ -22,14 +22,7 @@ class LoginController extends Controller
     public function create(): View{
         return view('home', ['msg'=>'Welkom op de home page!']);
     }
-
-    public function logout(): RedirectResponse{
-        // session()->flush();
-        return redirect('/login');
-    }
-
-
-    
+   
 
     
 }
