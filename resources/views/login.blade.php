@@ -16,8 +16,7 @@
 </form>
 
 <!-- login -->
-{{-- action='{{ route('verify_account') }}'' --}}
-<form method='post'>
+<form method='post' action='{{ route('verify_account') }}'>
     @csrf
     Gebruikersnaam: <div>
         <input type="text" name="name"><br>

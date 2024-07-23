@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 use Illuminate\View\View;
 use App\Models\User;
 use App\Http\Requests\StoreUserRequest;
@@ -24,6 +23,5 @@ class UserController extends Controller{
         return redirect('/login');
     }
     
-
 
 }
