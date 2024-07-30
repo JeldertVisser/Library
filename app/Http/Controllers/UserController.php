@@ -6,6 +6,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 use App\Models\User;
 use App\Http\Requests\StoreUserRequest;
+use Illuminate\Support\Facades\Log;
 
 class UserController extends Controller{
 
@@ -19,7 +20,7 @@ class UserController extends Controller{
         $user->email = $request->email;
         $user->password = $request->password;
         $user->save();
-
+        Log::channel('library')->info($user->name.' is geregistreerd.');
         return redirect('/login');
     }
     

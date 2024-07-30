@@ -6,6 +6,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 use App\Http\Requests\StoreLoginRequest;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class LoginController extends Controller
 {
@@ -13,9 +14,11 @@ class LoginController extends Controller
         $validated = $request->validated();
 
         if (Auth::attempt($validated)){
+            Log::channel('library')->info($request->name.' is ingelogd.');
             return redirect('/home');
         }
         else{
+            Log::channel('library')->info('Login van '.$request->name.' is geweigerd.');
             return redirect('/login');
         }
     }
